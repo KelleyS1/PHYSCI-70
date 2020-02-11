@@ -14,8 +14,6 @@ p {font-size: 16px;}
 }
 
 
-
-
 .img-responsive {
 	max-height: 600px;
 	width:100%;
@@ -26,12 +24,10 @@ p {font-size: 16px;}
 }
 
 
-
 .column {
   float: left;
   width: 33.33%;
-
-  padding: 3px;
+  padding: 5px;
 }
 
 /* Clear floats after image containers */
