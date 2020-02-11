@@ -1,5 +1,5 @@
 body {
-    font: 20px Montserrat, sans-serif; 
+    font: 20px Montserrat, sans-serif;
     line-height: 1.8;
     color: white;
     background-color: black;
@@ -23,4 +23,20 @@ p {font-size: 16px;}
 
 .col-sm-4 {
 	font: 30px;
+}
+
+
+
+.column {
+  float: left;
+  width: 33.33%;
+  height: auto;
+  padding: 3px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
