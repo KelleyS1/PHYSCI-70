@@ -42,8 +42,45 @@ they could be plugged in as they rotated to create a sound scape, but sadly time
 <figcaption>photo of my intial sketch</figcaption>
 </figure>
 
+<p> But as it is, I'm pretty happy with the end result in terms of design. The arduino and motors are set onto a piece of wood that I cut out.
+  The materials of the mobile are brass tubes that I used the drill to cut holes into so that I could thread smaller pieces
+  of brass through. At the ends of the small brass legs are piezo disks that matched in color to the rest of the mobile as well had the sound element
+  of the original sketch. <br> </p>
+
+  <figure>
+  <img src="../Week3/brass.png" class="img-responsive margin" style="width:auto" alt="sketch">
+  <figcaption>drilling into the brass</figcaption>
+  </figure>
+
+
+<p>  To get the motor to work, I used a L298N Motor driver and a small DC Motor.
+  This is hooked up to an arduino UNO which then talks to Max MSP to tell it to run the motor. Max MSP controls the speed and direction of the motor.
+<br><br>
+<strong> basic steps to get Max MSP to talk to Arduino UNO </strong>
+<ol>
+  <li>open Arduino IDE and download Firmate Standard onto the board. More about the  <a href="https://www.arduino.cc/en/reference/firmata">library</a>
+ here</li>
+  <li>Open Max MSP, a premade template exists called <a href="https://www.maxuino.org/about">Maxuino</a>, which is what I'm using</li>
+  <li>Go through the steps to initialize the pins in use on the board</li>
+</ol>
+That's the general idea and the way I am operating this mobile.
+</p>
+
 <figure>
-<img src="mobile.gif" style=width:300px;height:500px;"; alt="mobile gif">
+<img src="../Week3/max_firm.png" class="img-responsive margin" style="width:auto" alt="sketch">
+<figcaption>screen grab of using arduino IDE and maxuino</figcaption>
+</figure>
+
+
+
+<figure>
+<img src="../Week3/arduino.png" class="img-responsive margin" style="width:auto" alt="sketch">
+<figcaption>the arduino setup</figcaption>
+</figure>
+
+<p> The end result!</p>
+<figure>
+<img src="mobile.gif" style="width:auto" alt="mobile gif">
 <figcaption>gif of mobile running</figcaption>
 </figure>
 
