@@ -1,11 +1,11 @@
 body {
-    font: 20px Montserrat, sans-serif;
+    font: 15px Montserrat, sans-serif;
     line-height: 1.8;
     color: white;
     background-color: black;
   }
 
-p {font-size: 16px;}
+p {font-size: 15px;}
 .margin {margin-bottom: 15px;}
 
 .container-fluid {

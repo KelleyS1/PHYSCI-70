@@ -8,28 +8,103 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link href="../style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/arduino.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
 </head>
 <body>
 
 <div class="container-fluid">
-  <h3>Week 4 </h3> <br> 
+  <h2>Week 4: Microcontroller Programming </h2> <br>
   <div class="row">
-    
-      <p> Here is a Dog: </p>
+    <h3>Photoresistor controlling the On/Off of a LED</h3> <br>
 
-      <img src="../01_intro/Scully.JPG" class="img-responsive margin" style="width:40%" alt="Scully">
+      <h4> step 1: materials </h4>
+      <p><ol>
+        <li>an LED</li>
+        <li>photoresister</li>
+        <li>(2) 300 ohm resisters</li>
+        <li>jumper cables</li>
+        <li>breadboard</li>
+        <li>arduino UNO + usb cable</li>
+      </ol></p>
 
+      <img src="../week4/materials.JPG" class="img-responsive margin" style="width:40%" alt="materials">
+
+      <h4> step 2: circuit </h4>
+
+      <p><ul>
+        <li>ground to ground rail on breadboard</li>
+        <li>5v to power rail on breadboard</li>
+        <li>Pin 3 > 330ohm R > LED (+) </li>
+        <li> > LED (-) GND</li>
+        <li> 5V > photoresister</li>
+        <li>Analog 0 > 330ohm > photoresister </li>
+      </ul></p>
+
+      <img src="../week4/c1.JPG" class="img-responsive margin" style="width:40%" alt="circuit">
+      <img src="../week4/c2.JPG" class="img-responsive margin" style="width:40%" alt="circuit two">
+
+
+      <h4> step 3: code </h4><br>
+      <p>Lastly, plug your arduino into your laptop and set up the correct board and port.
+        Then upload this code onto your board.</p>
+
+
+
+      <img src="../week4/code.PNG" class="img-responsive margin" style="width:40%" alt="circuit">
+
+      <p>Here is the code that you should be able to copy and paste into your own IDE and configure to your own
+      uses. I've commented the code to help make things more clear.</p>
+
+      <pre><code class="language-arduino">
+
+      int ledPin = 3;  //define the pin for the led
+      int sensorInput = 0; //define the analog input for the photoresister
+
+      void setup()  {
+        pinMode(ledPin, OUTPUT);
+      }
+
+
+
+      void loop()  {
+
+        sensorInput = (analogRead(0)/4); // divides input 0-1023 to resemble to 0-255
+
+        analogWrite(ledPin, sensorInput);
+        delay(20);
+      }
+
+      </code> </pre>
+
+
+
+
+<p>Finally, all this gives us a dimmable LED that is controlled by the photoresister, as seen below</p>
+<img src="dim.gif" style="width:auto" alt="dim gif">
+
+<p>Have fun!</p>
+
+
+<br><br>
       <p> And here is an	<a href='https://nathanmelenbrink.github.io/ps70/04_arduino/index.html'>external link to the week 4</a>.
 
         <p> Back to <a href='../index.html'> Home Page</a>
 
       </p>
-   
+
   </div>
 
- 
-  
-  
+
+
+
 </div>
 
 </body>
