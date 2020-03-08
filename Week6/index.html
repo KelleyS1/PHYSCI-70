@@ -24,7 +24,70 @@
      I found these materials around the lab and then cut them down to fit between the two sides of the sensor.
    The materials I used were a soft foam, cardboard, and a fairly stiff board.</p>
 
-      <img src="../Week6/capa_sensor.png" class="img-responsive margin" style="width:40%" alt="Capacitive Sensor">
+      <img src="../Week6/materials.png" class="img-responsive margin" style="width:40%" alt="materials for Sensor">
+
+      <h4> The Data </h4>
+      <p> Amoung the three, I thought the cardboard felt like the most reliable and most intuitive material to use. The data also
+       seemed the most accurate to me. Below is a photo of the data collected while using these materials with the sensor.</p>
+
+       <img src="../Week6/materials2.png" class="img-responsive margin" style="width:40%" alt="materials for Sensor">
+
+       <h4> The Code </h4>
+<p>Here is the arduino IDE code as kindly provided by Robert Hart. </p>
+
+       <pre><code class="language-arduino">
+
+         #include < CapacitiveSensor.h> //including the capativie sensor.h
+  CapacitiveSensor Sensor = CapacitiveSensor(7,9);
+  void setup() {
+    Serial.begin(9600);
+  }
+
+  void loop() {
+    long sensorValue = Sensor.capacitiveSensor(1000);      //Change the number of samples to get the required timing and sensitivity.
+    //delay(10);
+    Serial.println(sensorValue);
+  }
+       </code> </pre>
+
+       <h3> Microphone Sensor </h3>
+<p>Finally, the sensor I decided to make was with the microphone module that I found in the lab. The hook up to the arduino nano board was pretty straight forward. <br>
+gnd to gnd. Vcc to 3.3 pin. Out to A0 (analoge A0) </p>
+
+       <img src="../Week6/micro.png" class="img-responsive margin" style="width:40%" alt="microphone input sensor">
+
+<h4> The Code</h>
+  <p>Here is the code I used that seemed to work quite well.</p>
+
+
+  <pre><code class="language-arduino">
+  /*
+    Program to capture the intensity of sound input from a microphone.  Uses an exponential running average.
+
+  */
+  int sound1, sound2;
+  float diff_sq;
+  float eps = 0.1;      //This constant determines the amount that each data point changes the running average.  A smaller
+                        // value makes the response slower.
+  float accum;          // The number that accumulates the running average.
+  void setup() {
+    Serial.begin(115200);     // initialize serial communication at 115200 bits per second:
+  }
+
+
+  void loop() {
+     sound1= analogRead(A0);
+     delay(1);                  //delay.  Determines what frequencies are detected.  At 1 mS, detection is best at ~ 300 Hz.
+     sound2= analogRead(A0);
+     diff_sq = float((sound1 - sound2) * (sound1-sound2));    //Take the difference between two points on the waveform.
+                                                              //Then square, to make it positive.
+     accum = accum*(1-eps)+ diff_sq * eps;
+     Serial.println(accum);
+
+  }
+
+   </code> </pre>
+
 
       <p> And here is an	<a href='https://nathanmelenbrink.github.io/ps70/06_input/index.html'>external link to the week 6</a>.
 
