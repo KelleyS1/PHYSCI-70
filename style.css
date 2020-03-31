@@ -66,7 +66,7 @@ p {font-size: 15px;}
 
 
 .gifcolumn {
-  float: left;
+  float: center;
   width: 23.33%;
   padding: 3px;
 }
