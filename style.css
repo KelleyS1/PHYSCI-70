@@ -16,7 +16,7 @@ p {font-size: 15px;}
 
 .img-responsive {
 	max-height: 600px;
-	width:100%;
+	width: 100%;
 }
 
 .col-sm-4 {
@@ -28,6 +28,47 @@ p {font-size: 15px;}
   float: left;
   width: 33.33%;
   padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.columncenter {
+  float: left;
+  width: 23.33%;
+  padding: 3px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+.smallcolumn {
+  float: center;
+  width: 33.33%;
+  padding: 3px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+
+.gifcolumn {
+  float: center;
+  width: 23.33%;
+  padding: 3px;
 }
 
 /* Clear floats after image containers */
@@ -58,4 +99,18 @@ figcaption {
     font: italic smaller sans-serif;
     padding: 3px;
     text-align: center;
+}
+
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid WHITE;
+
+}
+
+th {
+height: 50px;
 }
