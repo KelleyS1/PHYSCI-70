@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1671.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">//Code to transmit</p>
+<p class="p1">//Microcontroller has a button input and a digital output.</p>
+<p class="p1">//The digital output can be connected to a digital input of a receiving microcontroller to make a simple network.</p>
+<p class="p1">//The wired-together devices must share a common ground!</p>
+<p class="p2"><br></p>
+<p class="p1">//changed from Hart’s original code to be fit for the Arduino Nano</p>
+<p class="p2"><br></p>
+<p class="p1">const int out_pin = 3; //changed this from the original code which had "14" to 3</p>
+<p class="p1">const int button_pin = 4; //changed this from "9" to 4</p>
+<p class="p2"><br></p>
+<p class="p1">void setup() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>pinMode(button_pin, INPUT_PULLUP);<span class="Apple-converted-space">  </span>//This is the button pin.</p>
+<p class="p1"><span class="Apple-converted-space">  </span>pinMode(out_pin, OUTPUT); <span class="Apple-converted-space">        </span>// pin 5 for digital Write</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>Serial.begin(9600);<span class="Apple-converted-space">        </span>//for the USB serial devices, this baud rate is meaningless - can be "0"</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">void loop() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>int buttonState = digitalRead(button_pin);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>Serial.println(buttonState);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>digitalWrite(out_pin, buttonState);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>delay(10);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+</body>
+</html>

@@ -12,24 +12,95 @@
 <body>
 
 <div class="container-fluid">
-  <h3>Week 8 </h3> <br> 
+  <h3>Week 8: lot communication </h3> <br>
   <div class="row">
-    
-      <p> Here is a Dog: </p>
+    <h3><center> Using an Arduino Nano and a  "TouchBoard" for wired communication  </center></h3>
+    <h4> <center> subtitled: in the place of itsy bitsy and an SAMD-11 board </center></h4><br><br>
 
-      <img src="../01_intro/Scully.JPG" class="img-responsive margin" style="width:40%" alt="Scully">
+      <p> This week was a week of technical errors. Unfortunately, my itsy bitsy board and D-11 board did not want to work for me. Despite quite a large amount of time trying to
+       trouble shoot (which included installing and reinstalling 8.10, 8.12. and 8.8 versions of Arduino IDE as well as installing and reinstalling both the Arduino and Adafruit SAMD boards within the board manager)
+       After failing to even upload the Blink sketch onto the boards I then tested it out on my wife's Macbook Air which didn't previously have Arduino IDE and these boards. After installing everything and attempting to upload the blink sketch the upload failed and it threw the same errors.
+       I've included these errors below incase someone has
+     managed to crack it
+   <br><br>
+ <a href="failedcode.html" target= "_blank"> error code</a></p>
+ <a href="failedblinksketch.html" target= "_blank"> error code for the blink sketch</a> </p>
 
+
+<p> Eventually I had to move onto using an Arduino Nano and a <a href="https://www.bareconductive.com/shop/touch-board/" target= "_blank"> "touch board"  </a> by bare conductive although an Arduino UNO would work as well.
+  In this week, I'll show how to revamp the "transmit" and "reciever" code that was orginally written for the ItsyBitsy and D11 from <a href="https://roberthart56.github.io/SCFAB/SC_lab/Networking/networking/digital_io/index.html" target= "_blank">Robert Hart's tutorial </a> for these boards specifically. As well as
+how to put it all together.</p>
+
+
+<figure>
+<img src="../Week8/wiredconnection.png" class="img-responsive margin" style="width:auto%" alt="Wired Connections">
+<figcaption>Fully Assembled connection</figcaption>
+</figure>
+
+<h4> <center> step 1: the code </center> </h4>
+
+<p>Here is the code I used for the <a href="receive.html" target= "_blank">receiving board </a>(the touch board) and the code for the <a href="transmitting.html" target= "_blank">transmiting board</a> (the nano). They have
+been commented to help explain what I changed to accomandate the different pins on the nano. Upload this code onto the respective boards.</p>
+
+<figure>
+<img src="../Week8/button_code.png" class="img-responsive margin" style="width:auto%" alt="Wired Connections">
+<figcaption>the codes are prepended with "button" in this example</figcaption>
+</figure>
+
+<br>
+<h4> <center> step 2: materials </center> </h4>
+
+<p><ol>
+  <li>(~9) jumper wires</li>
+  <li>(1) breadboard friendly button</li>
+  <li>(1) bread board</li>
+  <li>(1)) Arduino Nano + USB cable</li>
+  <li>(1) touchboard or Arduino UNO + USB cable</li>
+<br> <p> <em> OPTIONAL (if you only have one USB port and cannot use your laptop to power both boards at the same time)</em> </p>
+  <li>(1) mobile battery (use this in the place of an USB cable for the Nano)</li>
+</ol></p>
+
+<figure>
+<img src="../Week8/materials.jpg" class="img-responsive margin" style="width:auto%" alt="the materials">
+<figcaption>here are the materials I used</figcaption>
+</figure>
+
+
+<br>
+
+
+<h4> <center> step 3: connections </center> </h4>
+<p>In the photo below you can see the schematic I made and used to set up the boards to communicate over a wired connection. When the button
+is pressed the motor("output" on the schematic) moves about 90 degress. Something to note is that for the motor I use the VCC from the tranmitting board even though the signal goes to the receiving board. I couldn't find any way to power the motor from the touchboard.</p>
+<figure>
+<img src="../Week8/schematic.jpg" class="img-responsive margin" style="width:auto%" alt="the schematic">
+<figcaption>schematic of my example</figcaption>
+</figure>
+
+
+<h4> <center> step 4: enjoy your wiggling networked device! </center> </h4>
+<p> have fun!</p>
+
+<div class="gifcolumn">
+<figure>
+<img src="motorbutton.gif" style="width:auto" alt="button press gif">
+<figcaption>gif of pressing button and motor turning</figcaption>
+</figure>
+</div>
+<br>
+
+<br><br>
       <p> And here is an	<a href='https://nathanmelenbrink.github.io/ps70/08_output/index.html'>external link to the week 8</a>.
 
         <p> Back to <a href='../index.html'> Home Page</a>
 
       </p>
-   
+
   </div>
 
- 
-  
-  
+
+
+
 </div>
 
 </body>
