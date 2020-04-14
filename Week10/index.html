@@ -12,18 +12,83 @@
 <body>
 
 <div class="container-fluid">
-  <h3>Week 10: More IoT! </h3> <br>
+  <h3>Week 10: Even more IoT! </h3> <br>
   <div class="row">
 
-      <p> Unfortunately this week was a hard one for me personally. I really didn't have time to go through the tutorials and
+      <p> Unfortunately this week was a hard one for me personally. I really didn't have time, or the mental capacity, to go through the tutorials and
       when I did I ran into a few errors. I'll document it below along with the solutions. Though one issue did stop me from
     progressing beyond tutorial 1b at the time of writing this. I'm talking with a few folks over on the class slack so hopefully I solve it after writing this. If so, I'll try to update at the bottom.
-    I followed these lovely (and very well documented!) tutorials from you all. Hopefully next
-  week will be less personally difficult, but honestly who knows what to expect in this pandemic filled world. I hope everyone is doing okay. </p>
+    I followed these lovely (and very well documented!) <a href="https://nathanmelenbrink.github.io/ps70/10_networking/index.html" target= "_blank"> tutorials </a> from you all. Hopefully next
+  week will be less personally difficult, but honestly who knows what to expect in this pandemic filled world. I hope everyone is doing okay. <br><br> <center>
+  For this week, instead of doing my usual "tutorial style" I am going to go through the errors I ran into and the one that finally stopped me. This is in hopes that it can help someone else. </center>
+  <br><br> <small> Edit: Also, as a sidenote, I did update a lot of the styling and formatting
+on the main page of this site which took some work since i'm very new and terrible at working with even the simpliest HTML. Please grade me kindly.</small></p>
+    <figure>
+      <img src="../Week10/huzzahstep1.jpg" class="img-responsive margin" style="width:100%" alt="Photo of Huzzah and LED light">
+      <figcaption>Huzzah with an LED on Pin 5</figcaption>
+      </figure>
+<br><br>
+      <h4> <center> First error & solution</center> </h4>
 
-      <img src="../01_intro/Scully.JPG" class="img-responsive margin" style="width:40%" alt="Scully">
+      <p> 1)Following the first tutorial,I installed the boards package into the preferences and then downloaded the "esp32" board form the board manager. <br>
+        2) Now that the drivers and boards are installed, I opened the "SimpleWifiServer" from the examples within Arduino IDE.
+        3) Inputted my SSID and corresponding password into the boilerplate examples and uploaded. The compile went smoothly. Actually the smoothest compile I've had in weeks!
+<br> <font size="+1">The PROBLEM </font> <br>
+        4) Opened the Serial Monitor and got a bunch of "?????" <br>
+        <br> <font size="+1">The FIX</font> <br>
 
-      <p> And here is an	<a href='https://nathanmelenbrink.github.io/ps70/10_networking/index.html'>external link to the week 10</a>.
+        Luckily this one is pretty easy. Within the serial monitor, change the baud rate to 115200 and <strong> fixed </strong>. <em> Usually </em>
+
+        <figure>
+          <img src="../Week10/baud.png" class="img-responsive margin" style="width:100%" alt="serial monitor baud rate">
+          <figcaption>dropdown menu in Serial Monitor to change Baud Rate</figcaption>
+          </figure>
+    <br><br>
+
+    <h4> <center> Second error & solution</center> </h4>
+    <p> 1) Now text appears instead of the "???" and it says it accessing my network <br>
+      2) A "....." appears. Wait
+  <br> <font size="+1">The PROBLEM </font> <br>
+      3) The Serial monitor doesn't progress further and instead continues to spit out "..." as it fails to connect. <br>
+      <br> <font size="+1">The FIX</font> <br>
+
+      For me, this problem was not as obvious. After some googling and reading, I fixed out that I had put in the 5 gHz connection and that is the issue.
+       Once I entered in the 2.4 gHz connection, reuploaded, and hit the reset button. Things progressed.<strong> Fixed. </strong>
+
+      <figure>
+        <img src="../Week10/network.png" class="img-responsive margin" style="width:100%" alt="Serial monitor displaying successful connection">
+        <figcaption>Serial monitor displaying successful connection</figcaption>
+        </figure>
+  <br><br>
+
+
+  <h4> <center> The last error </center> </h4>
+  <p> 1)Moving through the rest of tutorial 1a was a breeze. I set up the LED to pin 5 and controlled the On and Off from my server! <br>
+    2) I then moved onto tutorial 1b and went through the entire thirdparty google firebase setup. <br>
+    3) I added the new libraries as required. <br>
+    4) Opened the Arduino IDE to enter in my key and URL from Firebase <br>
+
+<br> <font size="+1">The PROBLEM </font> <br>
+    5) The code doesn't compile and instead I get <a href="error.html" target= "_blank"> these errors.</a> <br>
+    <br> <font size="+1">Attempts</font> <br>
+
+    From here, I checked my code and nothing changed from the boilerplate code provided by the tutorial other than my own info in the SSID, pw, and firebase URL/key.
+    After reaching out on Slack, Rob Hart ended up having seperate issues and unfortunately couldn't help me diagnose the issue.
+    It is worth noting that the code seems to compile on window devices but since they didn't have the same errors as me in the first place on their macOS machine, I'm not sure if my
+    errors would be solved through changing platforms.
+
+    <figure class="week10gif">
+      <img src="../Week10/gif.gif" class="img-responsive margin" style="width:auto" alt="gif of step 1a">
+      <figcaption>Demonstrating controlling a LED from my own server (from tutorial 1a) </figcaption>
+      </figure>
+<br><br><br><br>
+
+
+<p> At least I'm enjoying lighting and controlling my LED from my own server! Not a bad thing since <em> we can't leave the house anyway. </em> </P>
+
+
+
+
 
         <p> Back to <a href='../index.html'> Home Page</a>
 

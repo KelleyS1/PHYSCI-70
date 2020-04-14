@@ -79,6 +79,20 @@ p {font-size: 15px;}
 }
 
 
+
+.week10gif {
+  float: center;
+  width: 23.33%;
+  padding: 25px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
 figure {
     border: thin #c0c0c0 solid;
     display: flex;
