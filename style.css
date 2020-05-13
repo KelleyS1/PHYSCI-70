@@ -136,4 +136,5 @@ th {
 height: 50px;
 }
 
-.tab { margin-left: 50px; }
+.tab { margin-left: 50px;
+font-size: 15px;}
