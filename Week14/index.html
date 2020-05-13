@@ -71,7 +71,7 @@
                        <br>
 
 
-                       <p> <li> 2) Next big step was to make a protoboard and solder it all together then test it again. Once I plugged in the board and turned on the power suppy, all the motors turned on at full power then stopped abruptly. This is not
+                       <p> <li> Next big step was to make a protoboard and solder it all together then test it again. Once I plugged in the board and turned on the power suppy, all the motors turned on at full power then stopped abruptly. This is not
                        expected or desired behavior. After some trouble shooting, we found that the first FET in the protoboard needed to be replaced. Once I desoldered that out and resoldered a new FET in. The whole project worked
                      as expected again. I wanted to make the pins on the microcontroller feel more secure then the female headers could give me so I used a stacking protosheild for this board.
                      I solders all the pin connections to this and then placed it on top of the Mega.</li></p>
@@ -90,7 +90,7 @@
 
                      <br>
                     <p>
-                    <li> 3) Now it was time to pull in my 49-key midi keyboard. This step was fairly simple. I identified the piano-keys I wanted to use (for example, C4/Middle C). I went through each motor
+                    <li> Now it was time to pull in my 49-key midi keyboard. This step was fairly simple. I identified the piano-keys I wanted to use (for example, C4/Middle C). I went through each motor
                      and picked a key for it. Then I matched the midi number to each of these keys. In Max, I used a midiIn~ objects along with a Sel~ objects. This way I could easily identify the midi number that corresponded to the piano-key. Then send that
                      to a motor that would only listen to it's assigned midi key and thus only that key could trigger the motor.
                    </li> </p>
