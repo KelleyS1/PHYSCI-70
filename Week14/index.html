@@ -14,18 +14,16 @@
   <div class="container-fluid bg-3">
 
 
-
-
       <h3><center> The Final Project </center> </h3> <br>
 
-          <p><a href='../FinalProjectProposal/index.html'> Here is my original proposal </a> </p>
+          <p><a href='../FinalProjectProposal/index.html'> First, here is my original proposal </a> </p>
 
 
           <h4><center> The Final Result: </center><h4>
 
             <p> Turned out pretty good! As you can see below. I'm able to manipulated and "play" the (3) DC motors, (3) Solenoids, (2) Steppers, and (1) Servo from
-               just one microcontroller and one power supply! Having just one microcontroller and one power supply was a big goal for this project to
-               keep it small and able to travel. The second biggest was to get the circuits and motors all soldered into a permanent form.
+               just one microcontroller and one power supply! Having just one microcontroller and one power supply was a big goal for this project. This way it is small enough to travel with me.
+               The second biggest was to get the circuits and motors all soldered into a permanent form.
                The third was to make it look nice. Right now, I think looks okay in this cardboard box but once I have the digital fabrication lab (3D printers, laser cutters)
                back at my disposal then I'll make a nicer container to encase this project. <p>
 
@@ -34,7 +32,7 @@
 
                  <h4><center>The Process </center> <h4>
                    <p> <ol>
-                     <li> I first assembled all the DC motors, solenoids, and servo with a UNO and breadboard. By using FET(s), I was able to get a fairly small form factor.
+                     <li> I first prototyped all the DC motors, solenoids, and servo with a UNO and breadboard. By using FET(s), I was able to get a fairly small form factor.
                     For this step, <a href="https://roberthart56.github.io/SCFAB/SC_lab/Output_Devices/FET/index.html" target="_blank"> I followed this tutorial here.  </a> </li></p>
 
                     <figure>
@@ -55,8 +53,8 @@
                     <p class="tab">
                        - Next, powered each board up seperately and uploaded the "Standard Firmata" sketch from the Firmata library within the Arduino IDE.
                      <a href="https://kelleys1.github.io/PHYSCI-70/Week3/index.html"> I talk about this a bit in a previous week here. </a> Check out the "basic steps to get Max to talk to..."" here you'll find
-                        links to maxuino and the firmata library!. <br> <br>
-                      -Then once that is uploaded, I opened up Max MSP and initialized the boards and checked that each
+                        links to maxuino and the firmata library! <br> <br>
+                      -Then once that was uploaded, I opened up Max MSP and initialized the boards and checked that each
                       pin ran the motors as expected (they did).    <br> <br>
 
                        - Once I was confident it all worked seperately between these two boards I put them together within the same breadboard to share a single power supply!
@@ -71,11 +69,11 @@
                        <br>
 
 
-                       <p> <li> Next big step was to make a protoboard and solder it all together then test it again. Once I plugged in the board and turned on the power suppy, all the motors turned on at full power then stopped abruptly. This is not
-                       expected or desired behavior. After some trouble shooting, we found that the first FET in the protoboard needed to be replaced. Once I desoldered that out and resoldered a new FET in. The whole project worked
-                     as expected again. I wanted to make the pins on the microcontroller feel more secure then the female headers could give me so I used a stacking protosheild for this board.
-                     I solders all the pin connections to this and then placed it on top of the Mega.</li></p>
-
+                       <p> <li> Next big step was to make a protoboard and solder it all together then test it again. A small hiccup occured though: once I finished soldering, I plugged in the (now Mega) board and turned on the power suppy, all the motors turned on at full power then stopped abruptly. This is not
+                      the expected or desired behavior. After some trouble shooting with Robert Hart, we found that the first FET in the protoboard needed to be replaced. I desoldered that out and resoldered a new FET in then the whole project worked
+                     as expected again.
+                     I wanted to make the pins on the microcontroller feel more secure then the female headers could give me so I used a stacking protosheild for this board.
+                     This means, I solders all the pin connections to this and then placed it on top of the Mega.
 
                      <figure>
                        <img src="../Week14/redproto.png" class="img-responsive margin" style="width:auto" "height:auto" alt="finished protoboard">
@@ -90,9 +88,10 @@
 
                      <br>
                     <p>
-                    <li> Now it was time to pull in my 49-key midi keyboard. This step was fairly simple. I identified the piano-keys I wanted to use (for example, C4/Middle C). I went through each motor
-                     and picked a key for it. Then I matched the midi number to each of these keys. In Max, I used a midiIn~ objects along with a Sel~ objects. This way I could easily identify the midi number that corresponded to the piano-key. Then send that
-                     to a motor that would only listen to it's assigned midi key and thus only that key could trigger the motor.
+                    <li> Now it was time to plug in my 49-key midi keyboard. This step was fairly simple. I identified the piano-keys I wanted to use (for example, C4/Middle C). I went through each motor
+                     and picked a key for it. Then I matched the midi number to each of these keys.
+                     In Max MSP, I used a midiIn~ object along with a Sel~ objects. This way I could easily identify the midi number that corresponded to the piano-key. Then send that
+                     to a motor that would only listen to its assigned midi key. This made it so only that key could trigger the motor. As shown below.
                    </li> </p>
 
 
@@ -110,9 +109,10 @@
 
 
                      <h4><center> The Circuits </center><h4>
-<p> First, below is the diagram for the circuit along with specific involve on pins and the supplies used. Please take a look and consider making your own! <br>
-Second, <a href="maxDownload.zip"> here is a link to my Max MSP patch. </a> Feel free to open it up and take it apart to figure it out or modify it for your own purpose. Within the folder is the maxuino object and the "main_finalproject.maxpat." Open the main project.
-Do not remove any of these files from the folder. Place this folder in the directory of Max MSP. Follow the directions within the patch to get it to work. Go ahead and send me a message if any questions!</p>
+<p> First, below is the diagram for the circuit along with specific involve on pins and the supplies used. It's two pages, so make sure to either download it or read it all.
+  I'll keep it short here because it's all in the PDF. Please take a look and consider making your own! <br>
+Second, <a href="maxDownload.zip"> here is a link to my Max MSP patch. </a> Feel free to open it up and take it apart to figure it out or modify it for your own purpose. Within the folder is the maxuino objects and the "main_finalproject.maxpat." Open the main project.
+Do not remove any of these files from the folder. Place this folder in the directory of Max MSP. Follow the directions within the patch to get it to start. Go ahead and send me a message if any questions!</p>
 
 
 <object data="documentation.pdf" type="application/pdf" width="750px" height="750px">
@@ -123,6 +123,8 @@ Do not remove any of these files from the folder. Place this folder in the direc
 
 <br>
 
+<p> That's it! I'm looking forward to seeing what kind of music I can make with this!</p>
+
                          <figure>
                            <img src="../Week14/finalresult.png" class="img-responsive margin" style="width:auto" "height:auto" alt="final project photo">
                          <figcaption> full project in all its glory </figcaption>
@@ -130,7 +132,7 @@ Do not remove any of these files from the folder. Place this folder in the direc
                        <br>
 
 
-
+<br>
 
 
                 <p> Back to <a href='../index.html'> Home Page</a> </p
