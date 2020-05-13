@@ -8,6 +8,9 @@ body {
 p {font-size: 15px;}
 .margin {margin-bottom: 15px;}
 
+li {font-size: 15px;}
+.margin {margin-bottom: 15px;}
+
 .container-fluid {
   padding: 30px;
   padding-bottom: 70px;
@@ -132,3 +135,5 @@ table, th, td {
 th {
 height: 50px;
 }
+
+.tab { margin-left: 50px; }
